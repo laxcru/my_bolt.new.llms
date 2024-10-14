@@ -30,20 +30,29 @@ export function getGroqModel(apiKey: string, model: string) {
   return openai(model);
 }
 
+export function getGroqModel_cn(apiKey: string, model: string) {
+  const openai = createOpenAI({
+    baseURL: 'https://gateway.ai.cloudflare.com/v1/8d75f22605db146a86f364ff865aa219/qi/groq',
+    apiKey,
+  });
+
+  return openai(model);
+}
+
 export function getOllamaModel(model: string) {
   return ollama(model);
 }
 
 export function getModel(provider: string, model: string, env: Env) {
   const apiKey = getAPIKey(env, provider);
-  
+
   switch (provider) {
     case 'Anthropic':
       return getAnthropicModel(apiKey, model);
     case 'OpenAI':
       return getOpenAIModel(apiKey, model);
     case 'Groq':
-      return getGroqModel(apiKey, model);
+      return getGroqModel_cn(apiKey, model);
     default:
       return getOllamaModel(model);
   }
