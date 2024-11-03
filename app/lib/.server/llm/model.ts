@@ -39,6 +39,15 @@ export function getGroqModel_cn(apiKey: string, model: string) {
   return openai(model);
 }
 
+export function getSiliconflow(apiKey: string, model: string) {
+  const openai = createOpenAI({
+    baseURL: 'https://api.siliconflow.cn/v1',
+    apiKey,
+  });
+
+  return openai(model);
+}
+
 export function getOllamaModel(model: string) {
   return ollama(model);
 }
@@ -53,6 +62,8 @@ export function getModel(provider: string, model: string, env: Env) {
       return getOpenAIModel(apiKey, model);
     case 'Groq':
       return getGroqModel_cn(apiKey, model);
+    case 'Siliconflow':
+      return getSiliconflow(apiKey, model);
     default:
       return getOllamaModel(model);
   }

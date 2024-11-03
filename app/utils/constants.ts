@@ -9,6 +9,7 @@ export const MODEL_LIST = [
     { name: 'gpt-4o', label: 'GPT-4o', provider: 'OpenAI' },
     { name: 'qwen2.5-coder:7b', label: 'Qwen 2.5 Coder 7b', provider: 'Ollama' },
     { name: 'qwen2.5-coder:1.5b', label: 'Qwen 2.5 Coder 1.5b', provider: 'Ollama' },
+    { name: 'Qwen/Qwen2.5-Coder-7B-Instruct', label: 'Qwen 2.5 Coder 7b Instruct', provider: 'Siliconflow' },
     { name: 'deepseek-coder-v2:236b', label: 'DeepSeek-Coder-V2 236b', provider: 'Ollama' },
     { name: 'deepseek-coder-v2:16b', label: 'DeepSeek-Coder-V2 16b', provider: 'Ollama' },
     { name: 'codebooga', label: 'Codebooga 34b', provider: 'Ollama' },
